@@ -35,7 +35,7 @@ export default function PlacesScreen() {
 
         dispatch(addPlace(newPlace));
         setCity("");
-        fetch("http://192.168.1.16:3000/places", {
+        fetch("https://backend-locapic.vercel.app/places", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -49,7 +49,7 @@ export default function PlacesScreen() {
   };
 
   const handleDelete = (data) => {
-    fetch("http://192.168.1.16:3000/places", {
+    fetch("https://backend-locapic.vercel.app/places", {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ nickname: user.nickname, name: data }),
